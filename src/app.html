@@ -9,13 +9,16 @@
     <title>Bootstrap Template</title>
     <!-- Bootstrap -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-     <link href="styles/app.css" rel="stylesheet">
+    <link href="styles/app.css" rel="stylesheet">
 </head>
 
 <body>
 
     <div ng-controller="UploadController">
         <file-form></file-form>
+    </div>
+    <div ng-controller="RegisterController">
+        <register-form></register-form>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -28,8 +31,15 @@
 
     <!-- Include My App's JS file(s)-->
     <script src="scripts/app.js"></script>
+    <!-- controllers -->
     <script src="scripts/controllers/uploadController.js"></script>
+    <script src="scripts/controllers/registerController.js"></script>
+
+    <!-- directives -->
     <script src="scripts/directives/fileForm.js"></script>
+    <script src="scripts/directives/registerForm.js"></script>
+
+    <!-- services -->
     <script src="scripts/services/ajaxFactory.js"></script>
 </body>
 

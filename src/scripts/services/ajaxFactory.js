@@ -1,5 +1,5 @@
 angular.module('myApp')
-    .factory('AjaxFactory', function ($http) {
+    .factory('AjaxFactory', function ($http, $httpParamSerializer) {
         var urlBase = 'http://util.mw.metropolia.fi/ImageRekt/api/v2/';
         var ajaxFunctions = {};
 
@@ -11,6 +11,15 @@ angular.module('myApp')
                 }
             });
         };
+
+        ajaxFunctions.register = function (args) {
+            return $http.post(urlBase + 'register', $httpParamSerializer(args), {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            });
+        };
+
 
         return ajaxFunctions;
     });
